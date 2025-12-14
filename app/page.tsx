@@ -1,11 +1,43 @@
+'use client'
+
 /* eslint-disable @next/next/no-img-element */
-import React from 'react'
+import React, { useRef } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import ReactLenis from 'lenis/react'
+import { useGSAP } from '@gsap/react'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const LandingPage = () => {
-  const pathRef = 
+  const pathRef = useRef<SVGPathElement>(null)
+
+  useGSAP(() => {
+    const path = pathRef.current;
+    if (!path) return;
+
+    const pathLength = path.getTotalLength();
+
+    path.style.strokeDasharray = pathLength.toString();
+    path.style.strokeDashoffset = pathLength.toString();
+
+    gsap.to(path, {
+      strokeDashoffset: 0,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.spotlight',
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: true,
+      }
+    })
+
+  }, [])
 
   return (
     <main>
+      <ReactLenis root />
+
       <section className="hero">
         <h1>Designed to keep information clear and connected</h1>
       </section>
@@ -67,7 +99,7 @@ const LandingPage = () => {
             preserveAspectRatio="xMidYMin meet"
           >
             <path
-
+              ref={pathRef}
               id="stroke-path"
               d="M639.668 100C639.668 100 105.669 100 199.669 601.503C293.669 1103.01 1277.17 691.502 1277.17 1399.5C1277.17 2107.5 -155.332 1968 140.168 1438.5C435.669 909.002 1442.66 2093.5 713.168 2659.5"
               stroke="#FF5F0A"
