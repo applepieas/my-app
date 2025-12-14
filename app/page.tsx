@@ -1,65 +1,86 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
+import React from 'react'
 
-export default function Home() {
+const LandingPage = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main>
+      <section className="hero">
+        <h1>Designed to keep information clear and connected</h1>
+      </section>
+
+      <section className="spotlight">
+        <div className="row">
+          <div className="img">
+            <img src="/img_1.svg" alt="" />
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        <div className="row">
+          <div className="col">
+            <div className="card">
+              <h2>A cleaner way to handle incoming updates</h2>
+              <p>
+                Instead of showing every message or notification instantly, the
+                app groups related items and presents them in an organized
+                panel. It keeps your workspace calm, even when activity spikes.
+              </p>
+            </div>
+          </div>
+          <div className="col">
+            <div className="img">
+              <img src="/img_2.svg" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col">
+            <div className="img">
+              <img src="/img_3.svg" alt="" />
+            </div>
+          </div>
+          <div className="col">
+            <div className="card">
+              <h2>Built for increasing information demands</h2>
+              <p>
+                Whether it is files, notes, or incoming messages, the app sorts
+                and prioritizes items automatically. It prevents clutter and
+                helps maintain clarity during busy periods.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="img">
+            <img src="/img_4.svg" alt="" />
+          </div>
+        </div>
+
+        <div className="svg-path">
+          <svg
+            viewBox="0 0 1378 2760"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMin meet"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+            <path
+
+              id="stroke-path"
+              d="M639.668 100C639.668 100 105.669 100 199.669 601.503C293.669 1103.01 1277.17 691.502 1277.17 1399.5C1277.17 2107.5 -155.332 1968 140.168 1438.5C435.669 909.002 1442.66 2093.5 713.168 2659.5"
+              stroke="#FF5F0A"
+              strokeWidth="200"
+              strokeLinecap="round"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </svg>
         </div>
-      </main>
-    </div>
-  );
+      </section>
+
+      <section className="outro">
+        <h1>Clearer organization ready for whatever comes next</h1>
+      </section>
+    </main>
+  )
 }
+
+export default LandingPage
