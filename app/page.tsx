@@ -2,6 +2,8 @@
 import React from 'react'
 
 const LandingPage = () => {
+  const pathRef = 
+
   return (
     <main>
       <section className="hero">
